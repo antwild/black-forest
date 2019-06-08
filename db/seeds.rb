@@ -1,3 +1,6 @@
+puts 'Cleaning database...'
+User.destroy_all
+
 users = [
   {
     email: "jo@ongert.com",
@@ -28,6 +31,12 @@ users = [
   }
 ]
 
+flat = { available: true }
+
 puts "Creating users..."
 User.create!(users)
 puts "One admin and two renters created!"
+puts "Creating the flat..."
+Flat.create!(flat)
+puts "Flat built!"
+puts "Seed complete 👍🏾"
